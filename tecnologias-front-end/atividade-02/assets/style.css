@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at 70% 40%, #22252a 20%, #141414 40%);
+    background-size: cover;          
+    background-repeat: no-repeat;   
+    width: 100%;
+    min-height: 100vh;               
+}
+
+#container {
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+}
+
+/* Cabeçalho */ 
+header #container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+header nav .menu-left {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+header nav li {
+    margin: 0 30px;
+}
+
+.menu-left li a {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff; 
+    font-family: sans-serif;
+    padding-bottom: 35px; 
+    padding-top: 35px; 
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-left li a::after, 
+.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #3ca1e6; 
+    border-radius: 2px;
+    box-shadow: 
+        0px 0px 8px 1px rgba(60, 161, 230, 0.8),
+        0px 0px 18px 4px rgba(60, 161, 230, 0.4);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-left li a:hover::after,
+.menu-left li a.active::after {
+    opacity: 1;
+    transform: scaleX(1); 
+}
+
+.menu-left li a:hover {
+    color: #999;
+}
+
+header .menu-right .button {
+    display: block;
+    background-color: #d1d0cc;
+    color: #181b1e;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+header .menu-right .button:hover {
+   box-shadow: 0px 0px 10px 3px  #3ca1e6;
+   transition: 0.3s;
+}
+
+header .menu-icon {
+    display: none;
+    flex: 1;
+    justify-content: end;
+    cursor: pointer;
+}
+
+/* Menu mobilie */
+.mobile-menu-overlay {
+    display: none;
+}
+
+/* Seção Hero */
+.hero #container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.hero .hero-left h1 {
+    color: #fff;
+    font-size: clamp(60px, 5vw, 90px);
+    font-weight: 200;
+   
+}
+
+.hero .hero-right img {
+    width: auto;
+    height: 600px;
+    padding: 40px;
+}
+
+/* Seção apresentação do produto */
+.product {
+    background-color: #22252a;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.product h1 {
+    color: #fff;
+    font-weight: 200;
+    font-size: 50px;
+    padding: 40px 0;
+    margin: 0;
+    text-align: center;
+}
+
+.product .cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.product .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 350px;
+    padding: 15px;
+    text-align: center;
+    border: solid 2px #70849a;
+    border-radius: 20px;
+    background: radial-gradient(circle at 50% 30%, #46617f 5%, #303947 40%);
+    background-size: cover;          
+    background-repeat: no-repeat;
+} 
+
+.product .card:hover {
+    box-shadow: 0px 0px 20px 2px rgba(60, 161, 230, 0.4);
+    border: solid 2px #3ca1e6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.product .card img {
+    margin:20px 40px;
+
+}
+
+.product .card .description {
+    color: #d1d0cc;
+    margin-bottom: 20px;
+}
+
+.product .card .description h3 {
+    font-size: 18px;
+}
+
+.product .card .description p {
+    font-weight: 200;
+}
+
+/* Seção de depoimentos */
+.testimonials {
+    text-align: center;
+    padding: 60px 0;
+    background: #141414;
+}
+
+.testimonials h2 {
+    color: #70849a;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.testimonials h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-family: "Inter", sans-serif;
+}
+
+.testimonials-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: radial-gradient(circle at 50% 30%, #22252a 5%, #141414 80%);
+    border: 2px solid #2d3238;
+    border-radius: 20px;
+    width: 300px; 
+    min-width: 300px; 
+    flex-shrink: 0;   
+    height: 320px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: #3ca1e6;
+    box-shadow: 0px 0px 20px 2px rgba(60, 161, 230, 0.4);
+    cursor: pointer;
+}
+
+
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #2d3238;
+}
+
+.testimonial-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #ffb800; 
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card p {
+    color: #d1d0cc;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 200;
+}
+.carousel-item .carousel-card {
+    padding: 20px 0;
+}
+
+/* Rodapé */
+footer {
+     background-color: #22252A;
+     height: auto;
+}
+
+footer #container {
+    color: #d1d0cc; 
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    height: 100%; 
+    padding: 40px 0; 
+}
+
+
+footer .contact p, 
+footer .support p, 
+footer .social p {
+    font-weight: 500; 
+    font-size: 20px; 
+    margin: 0 0 20px 0; 
+    height: 30px; 
+}
+
+footer .logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    
+}
+
+footer .logo p {
+    margin: 20px 0 0 0; 
+    line-height: 1.5;
+}
+
+footer .contact,
+footer .support,
+footer .social {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+footer .social {
+    align-items: center; 
+}
+
+footer .contact a, 
+footer .support a, 
+footer .social a {
+    text-decoration: none; 
+    color: #d1d0cc; 
+    margin-bottom: 8px; 
+    display: inline-block;
+}
+
+footer .contact a:hover,
+footer .support a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer .social a img {
+    height: 24px; 
+    width: auto;
+    display: block;
+    margin-bottom: 4px;
+}
+
+footer .line-footer {
+    width: 90%;
+    background-color: #444746;
+    height: 1px;
+}
+
+footer .copy {
+    background-color: #22252A;
+    color: #d1d0cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .copy p {
+    margin: 0;
+    padding: 20px 0;
+}
+
+/*Responsividade*/
+@media (max-width: 1225px) {
+    body {
+         background: radial-gradient(circle at 50% 50% 50%, #22252a 20%, #141414 40%);
+         padding-top: 80px;
+    }
+
+    header {
+        position: fixed;              
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(20, 20, 20, 0.95); 
+        backdrop-filter: blur(10px);   
+        z-index: 998;                 
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    header.hide {
+        transform: translateY(-100%);  
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header .menu-icon {
+        display: flex;
+    }
+
+    .hero #container  {
+        flex-direction: column;
+    }
+
+     .hero .hero-right img {
+        height: 500px;
+     }
+
+    .hero .hero-left {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .product,  .testimonials #container, footer  {
+        padding-top: 70px;
+    }
+
+    .product .cards {
+        width: 600px;
+        margin: auto;
+    }
+
+    .menu-left li a {
+        flex-direction: column;
+        position: relative;
+        font-family: sans-serif;
+    }
+
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;                  
+        height: 100vh;                 
+        background: #141414;           
+        z-index: 1000;                 
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);   
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    }
+
+    .mobile-menu-overlay.active {
+        transform: translateX(0);    
+        box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-menu-close {
+        color: #ffffff;
+        font-size: 35px;
+        align-self: flex-end;
+        cursor: pointer;
+        margin-bottom: 40px;
+    }
+
+    .mobile-menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .mobile-menu-links li a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu-links li a:hover,
+    .mobile-menu-links li a.active-button {
+        color: #3ca1e6;                
+    }
+  
+    .button-mobile {
+        display: block;
+        text-align: center;
+        background-color: #d1d0cc;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .button-mobile:hover {
+        box-shadow: 0px 0px 10px 3px  #3ca1e6;
+        transition: 0.3s;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero .hero-right img {
+        height: 400px;
+    }
+
+    .product .cards {
+        width: 100%; 
+        display: flex;
+        flex-wrap: nowrap; 
+        overflow-x: auto;  
+        scroll-snap-type: x mandatory;     
+        gap: 20px;
+        justify-content: flex-start; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product .cards::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .product .card {
+        flex: 0 0 280px;  
+        scroll-snap-align: center;   
+    }
+
+    footer .logo {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 120px;
+    } 
+    
+     .hero .hero-left h1 {
+        font-size: 35px;
+     }
+
+     .hero .hero-right img {
+        height: 350px;
+     }
+
+     .product h1 {
+        font-size: 30px;
+     }
+
+     .testimonials h1 {
+        font-size: 25px;
+     }
+}
+
+
+    
