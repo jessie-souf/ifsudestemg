@@ -420,9 +420,9 @@ footer .copy p {
         padding-top: 70px;
     }
 
+   
     .product .cards {
-        width: 600px;
-        margin: auto;
+        width: auto;
     }
 
     .menu-left li a {
