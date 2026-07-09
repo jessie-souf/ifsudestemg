@@ -101,6 +101,7 @@ header .menu-right .button:hover {
    transition: 0.3s;
 }
 
+/* Menu mobilie */
 header .menu-icon {
     display: none;
     flex: 1;
@@ -108,7 +109,6 @@ header .menu-icon {
     cursor: pointer;
 }
 
-/* Menu mobilie */
 .mobile-menu-overlay {
     display: none;
 }
@@ -391,6 +391,10 @@ footer .copy p {
         transition: transform 0.3s ease-in-out; 
     }
 
+    header nav {
+        align-items: center;
+    }
+
     header.hide {
         transform: translateY(-100%);  
     }
@@ -541,6 +545,7 @@ footer .copy p {
 
      .product h1 {
         font-size: 30px;
+        padding: 35px 0 0 0;
      }
 
      .testimonials h1 {
